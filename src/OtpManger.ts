@@ -1,4 +1,4 @@
-import { Otp } from "./OTP";
+import { Otp } from "./Otp";
 
 enum OtpError {
     AldreadyExists = "Otp is already in query",
