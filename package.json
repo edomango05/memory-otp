@@ -1,0 +1,16 @@
+{
+  "name": "memory-otp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build" : "tsc",
+    "test" : "node ./dist/main"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.19"
+  }
+}
