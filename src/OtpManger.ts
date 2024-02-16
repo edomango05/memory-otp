@@ -20,9 +20,10 @@ class OtpException extends Error {
 export class OtpManager extends Map<string, Otp> {
     private digits: number;
     private durationSeconds: number;
-
-    constructor(digits: number, durationSeconds: number) {
+    private maxReties?: number;
+    constructor(digits: number, durationSeconds: number, maxRetries?:number) {
         super();
+        this.maxReties = maxRetries;
         this.digits = digits; 
         this.durationSeconds = durationSeconds;
 
@@ -39,7 +40,7 @@ export class OtpManager extends Map<string, Otp> {
         if ( this.get(id) ) {
             throw new OtpException(OtpError.AldreadyExists);
         }
-        this.set(id, new Otp(this.digits,this.durationSeconds))
+        this.set(id, new Otp(this.digits,this.durationSeconds,this.maxReties))
     }
 
     removeOtp(id : string) {
